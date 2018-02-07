@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
+  resources :tasks do
+  	member do
+  		get 'toggle'
+  	end
+  end
   resources :tasks
   resources :lists
   root "welcome#index"
